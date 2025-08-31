@@ -1,0 +1,78 @@
+:root{
+  --bg:#D291BC;
+  --card:#D291BC;
+  --accent:#0b72ff;
+  --muted:#FFFFFF;
+  --radius:12px;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+  background:var(--bg);
+  color:#80080;
+  padding:24px;
+  display:flex;
+  justify-content:left;
+}
+
+.wrap{
+  width:100%;
+  max-width:920px;
+  background:var(--card);
+  border-radius:var(--radius);
+  box-shadow:0 8px 30px rgba(20,30,60,0.08);
+  padding:28px;
+}
+
+header h1{margin:0 0 6px 0;font-size:1.6rem}
+header p{margin:0 0 18px 0;color:var(--muted)}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:12px;
+}
+
+label{
+  display:flex;
+  flex-direction:column;
+  font-size:0.92rem;
+}
+
+label input, label select, label textarea{
+  margin-top:6px;
+  padding:10px 12px;
+  border:1px solid #800080;
+  border-radius:8px;
+  font-size:0.95rem;
+}
+
+label.full{grid-column:1/-1}
+
+.actions{
+  margin-top:16px;
+  display:flex;
+  justify-content:flex-end;
+}
+
+button{
+  background:var(--accent);
+  color:#fff;
+  border:0;
+  padding:10px 18px;
+  border-radius:10px;
+  font-weight:600;
+  cursor:pointer;
+  box-shadow:0 6px 18px rgba(11,114,255,0.18);
+}
+
+footer{margin-top:18px;color:var(--muted);font-size:0.85rem;text-align:center}
+
+/* Responsive */
+@media (max-width:720px){
+  .grid{grid-template-columns:1fr}
+  .actions{justify-content:stretch}
+  button{width:100%}
+}
